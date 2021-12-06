@@ -72,15 +72,22 @@ console.log(me)
     Write a function called dice; it should randomize an integer number between 1 and 6.
 */
 
+const dice = function (min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+      };
+    console.log(dice(1, 6));
 
 /* EXERCISE 2
     Write a function called whoIsBigger which receives 2 numbers as parameters and returns the biggest one.
 */
 
+
 /* EXERCISE 3
     Write a function called splitMe which receives a string as a parameter and returns an array with every word in that string.
     Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
 */
+
+
 
 /* EXERCISE 4
     Write a function called deleteOne which receives a string and a boolean as parameters.
