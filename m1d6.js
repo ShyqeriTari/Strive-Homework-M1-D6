@@ -81,6 +81,21 @@ const dice = function (min, max) {
     Write a function called whoIsBigger which receives 2 numbers as parameters and returns the biggest one.
 */
 
+const whoIsBigger = function(numOne, numTwo) {
+    if (numOne > numTwo){
+   
+       console.log(numOne + " is bigger than " + numTwo)
+    } else if (numTwo > numOne) {
+   
+       console.log(numTwo + " is bigger than " + numOne)
+    } else {
+   
+       console.log(numOne + " is equal to " + numTwo)
+    }
+   
+   }
+   
+   console.log(whoIsBigger(10,10))
 
 /* EXERCISE 3
     Write a function called splitMe which receives a string as a parameter and returns an array with every word in that string.
