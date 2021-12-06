@@ -21,16 +21,16 @@ let test = ""
     Create a variable called sum and assign to it the result of the sum between the numbers 10 and 20.
 */
 
-let sum  = 10 + 20
+let sum = 10 + 20
 
 /* EXERCISE C
     Create a variable called random and assign to it a random number between 0 and 20 (it should be randomly created at each execution).
 */
 
-let random = (min, max) =>  {
+let random = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
-      };
-    console.log(random(0, 20));
+};
+console.log(random(0, 20));
 
 
 /* EXERCISE D
@@ -39,9 +39,9 @@ let random = (min, max) =>  {
 
 let me = {
 
-name: "Shyqeri ",
-surname: "Tari ",
-age: 26,
+    name: "Shyqeri ",
+    surname: "Tari ",
+    age: 26,
 
 }
 
@@ -55,52 +55,58 @@ delete me.age
    Write a piece of code for programmatically adding to the me object you defined before an array called skills, containing the programming languages you know right now.
 */
 
-let skills = [ "HTML", "Javascript", "Java"]
-Object.assign(me, skills)
-
+me.skills = ["HTML", "Javascript", "Java"]
 console.log(me)
 
 /* EXERCISE G
    Write a piece of code for programmatically removing the last skill from the skills array inside the me object.
 */
 
-
-
+me.skills.pop()
+console.log(me)
 
 // JS Functions
 /* EXERCISE 1
     Write a function called dice; it should randomize an integer number between 1 and 6.
 */
 
-const dice = function (min, max) {
+function dice(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
-      };
-    console.log(dice(1, 6));
+};
+console.log(dice(1, 6));
 
 /* EXERCISE 2
     Write a function called whoIsBigger which receives 2 numbers as parameters and returns the biggest one.
 */
 
-const whoIsBigger = function(numOne, numTwo) {
-    if (numOne > numTwo){
-   
-       console.log(numOne + " is bigger than " + numTwo)
+function whoIsBigger(numOne, numTwo) {
+    if (numOne > numTwo) {
+
+        console.log(numOne + " is bigger than " + numTwo)
     } else if (numTwo > numOne) {
-   
-       console.log(numTwo + " is bigger than " + numOne)
+
+        console.log(numTwo + " is bigger than " + numOne)
     } else {
-   
-       console.log(numOne + " is equal to " + numTwo)
+
+        console.log(numOne + " is equal to " + numTwo)
     }
-   
-   }
-   
-   console.log(whoIsBigger(10,10))
+
+}
+
+whoIsBigger(10, 10)
 
 /* EXERCISE 3
     Write a function called splitMe which receives a string as a parameter and returns an array with every word in that string.
     Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
 */
+
+console.log
+
+function splitMe(babboNatale) {
+    return babboNatale.split(" ")
+}
+console.log(splitMe("babbo natale"))
+
 
 
 
@@ -109,10 +115,35 @@ const whoIsBigger = function(numOne, numTwo) {
     If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 */
 
+/*
+function (sea, yesOrNo) {
+
+
+    if (yesOrNo === true) {
+
+        
+
+    } else {
+        
+    }
+}
+console.log(deleteOne("Let's go to the beach", false))
+*/
+
 /* EXERCISE 5
    Write a function called onlyLetters which receives a string as a parameter and returns it removing all the digits.
    Ex.: onlyLetters("I have 4 dogs") => returns "I have  dogs"
 */
+
+function onlyLetters(goRun) {
+
+    let running = goRun.replace(0 - 9, " ")
+    console.log(running)
+
+
+}
+onlyLetters("I'm going to run 40 km")
+
 
 /* EXERCISE 6
    Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
@@ -121,6 +152,14 @@ const whoIsBigger = function(numOne, numTwo) {
 /* EXERCISE 7
    Write a function called whatDayIsIt that should return the current day of the week.
 */
+
+function dayOfToday() {
+    let today = new Date();
+    let daysNmb = today.getDay();
+    const daysName = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    return daysName[daysNmb]
+}
+console.log("Today is", dayOfToday())
 
 /* EXERCISE 8
     Write a function called rollTheDices which receives a number as a parameter.
@@ -141,6 +180,28 @@ const whoIsBigger = function(numOne, numTwo) {
    Write a function called isTodayMyBirthday which should return true if today's your birthday, false otherwise.
 */
 
+
+
+function isTodayMyBirthday(birthdayDay, birthdayMonth) {
+
+    let day = new Date()
+    let today = day.getDate()
+    let todayMonth = day.getMonth()
+
+    console.log(today)
+    console.log(todayMonth)
+
+    if (today === birthdayDay && birthdayMonth === todayMonth) {
+
+        return "It's yor birthday"
+    } else {
+        return "It's not your birthday"
+    }
+
+}
+
+console.log(isTodayMyBirthday(6, 11))
+
 // JS Arrays & Objects
 // NOTE: the movies array used in some exercises is defined at the end of this file
 
@@ -156,6 +217,8 @@ const whoIsBigger = function(numOne, numTwo) {
 /* EXERCISE 13
     Write a function called countMovies which returns the number of movies contained in the provided movies array.
 */
+
+
 
 /* EXERCISE 14
     Write a function called onlyTheTitles which creates an array with just the titles of the movies contained in the provided movies array.
@@ -216,117 +279,118 @@ const whoIsBigger = function(numOne, numTwo) {
 */
 
 /* This movies array is used throughout the exercises. You're not supposed to alter it. */
+
 const movies = [
     {
-      Title: "The Lord of the Rings: The Fellowship of the Ring",
-      Year: "2001",
-      imdbID: "tt0120737",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
+        Title: "The Lord of the Rings: The Fellowship of the Ring",
+        Year: "2001",
+        imdbID: "tt0120737",
+        Type: "movie",
+        Poster:
+            "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
     },
     {
-      Title: "The Lord of the Rings: The Return of the King",
-      Year: "2003",
-      imdbID: "tt0167260",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+        Title: "The Lord of the Rings: The Return of the King",
+        Year: "2003",
+        imdbID: "tt0167260",
+        Type: "movie",
+        Poster:
+            "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
     },
     {
-      Title: "The Lord of the Rings: The Two Towers",
-      Year: "2002",
-      imdbID: "tt0167261",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BNGE5MzIyNTAtNWFlMC00NDA2LWJiMjItMjc4Yjg1OWM5NzhhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+        Title: "The Lord of the Rings: The Two Towers",
+        Year: "2002",
+        imdbID: "tt0167261",
+        Type: "movie",
+        Poster:
+            "https://m.media-amazon.com/images/M/MV5BNGE5MzIyNTAtNWFlMC00NDA2LWJiMjItMjc4Yjg1OWM5NzhhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
     },
     {
-      Title: "Lord of War",
-      Year: "2005",
-      imdbID: "tt0399295",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTYzZWE3MDAtZjZkMi00MzhlLTlhZDUtNmI2Zjg3OWVlZWI0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+        Title: "Lord of War",
+        Year: "2005",
+        imdbID: "tt0399295",
+        Type: "movie",
+        Poster:
+            "https://m.media-amazon.com/images/M/MV5BMTYzZWE3MDAtZjZkMi00MzhlLTlhZDUtNmI2Zjg3OWVlZWI0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
     },
     {
-      Title: "Lords of Dogtown",
-      Year: "2005",
-      imdbID: "tt0355702",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BNDBhNGJlOTAtM2ExNi00NmEzLWFmZTQtYTZhYTRlNjJjODhmXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+        Title: "Lords of Dogtown",
+        Year: "2005",
+        imdbID: "tt0355702",
+        Type: "movie",
+        Poster:
+            "https://m.media-amazon.com/images/M/MV5BNDBhNGJlOTAtM2ExNi00NmEzLWFmZTQtYTZhYTRlNjJjODhmXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
     },
     {
-      Title: "The Lord of the Rings",
-      Year: "1978",
-      imdbID: "tt0077869",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BOGMyNWJhZmYtNGQxYi00Y2ZjLWJmNjktNTgzZWJjOTg4YjM3L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+        Title: "The Lord of the Rings",
+        Year: "1978",
+        imdbID: "tt0077869",
+        Type: "movie",
+        Poster:
+            "https://m.media-amazon.com/images/M/MV5BOGMyNWJhZmYtNGQxYi00Y2ZjLWJmNjktNTgzZWJjOTg4YjM3L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
     },
     {
-      Title: "Lord of the Flies",
-      Year: "1990",
-      imdbID: "tt0100054",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BOTI2NTQyODk0M15BMl5BanBnXkFtZTcwNTQ3NDk0NA@@._V1_SX300.jpg",
+        Title: "Lord of the Flies",
+        Year: "1990",
+        imdbID: "tt0100054",
+        Type: "movie",
+        Poster:
+            "https://m.media-amazon.com/images/M/MV5BOTI2NTQyODk0M15BMl5BanBnXkFtZTcwNTQ3NDk0NA@@._V1_SX300.jpg",
     },
     {
-      Title: "The Lords of Salem",
-      Year: "2012",
-      imdbID: "tt1731697",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMjA2NTc5Njc4MV5BMl5BanBnXkFtZTcwNTYzMTcwOQ@@._V1_SX300.jpg",
+        Title: "The Lords of Salem",
+        Year: "2012",
+        imdbID: "tt1731697",
+        Type: "movie",
+        Poster:
+            "https://m.media-amazon.com/images/M/MV5BMjA2NTc5Njc4MV5BMl5BanBnXkFtZTcwNTYzMTcwOQ@@._V1_SX300.jpg",
     },
     {
-      Title: "Greystoke: The Legend of Tarzan, Lord of the Apes",
-      Year: "1984",
-      imdbID: "tt0087365",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTM5MzcwOTg4MF5BMl5BanBnXkFtZTgwOTQwMzQxMDE@._V1_SX300.jpg",
+        Title: "Greystoke: The Legend of Tarzan, Lord of the Apes",
+        Year: "1984",
+        imdbID: "tt0087365",
+        Type: "movie",
+        Poster:
+            "https://m.media-amazon.com/images/M/MV5BMTM5MzcwOTg4MF5BMl5BanBnXkFtZTgwOTQwMzQxMDE@._V1_SX300.jpg",
     },
     {
-      Title: "Lord of the Flies",
-      Year: "1963",
-      imdbID: "tt0057261",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BOGEwYTlhMTgtODBlNC00ZjgzLTk1ZmEtNmNkMTEwYTZiM2Y0XkEyXkFqcGdeQXVyMzU4Nzk4MDI@._V1_SX300.jpg",
+        Title: "Lord of the Flies",
+        Year: "1963",
+        imdbID: "tt0057261",
+        Type: "movie",
+        Poster:
+            "https://m.media-amazon.com/images/M/MV5BOGEwYTlhMTgtODBlNC00ZjgzLTk1ZmEtNmNkMTEwYTZiM2Y0XkEyXkFqcGdeQXVyMzU4Nzk4MDI@._V1_SX300.jpg",
     },
     {
-      Title: "The Avengers",
-      Year: "2012",
-      imdbID: "tt0848228",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+        Title: "The Avengers",
+        Year: "2012",
+        imdbID: "tt0848228",
+        Type: "movie",
+        Poster:
+            "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
     },
     {
-      Title: "Avengers: Infinity War",
-      Year: "2018",
-      imdbID: "tt4154756",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+        Title: "Avengers: Infinity War",
+        Year: "2018",
+        imdbID: "tt4154756",
+        Type: "movie",
+        Poster:
+            "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
     },
     {
-      Title: "Avengers: Age of Ultron",
-      Year: "2015",
-      imdbID: "tt2395427",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg",
+        Title: "Avengers: Age of Ultron",
+        Year: "2015",
+        imdbID: "tt2395427",
+        Type: "movie",
+        Poster:
+            "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg",
     },
     {
-      Title: "Avengers: Endgame",
-      Year: "2019",
-      imdbID: "tt4154796",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
+        Title: "Avengers: Endgame",
+        Year: "2019",
+        imdbID: "tt4154796",
+        Type: "movie",
+        Poster:
+            "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
     },
-  ];
+];
